@@ -13,6 +13,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Image gallery -->
+    <link rel="stylesheet" href="css/blueimp-gallery.min.css">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -56,6 +58,9 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#about">Realni Aikido</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#gallery">Galerija</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Lokacije</a>
@@ -108,6 +113,71 @@
                 <p class="lead">Od 2003. godine, Realni aikido je prva i jedina međunarodno priznata Srpska borilačka veština.</p>
                 <p class="lead">Trenutno, pod okriljem SCRA radi 190 klubova i sekcija, u više od 20 zemalja širom sveta. Samo u Srbiji postoji preko 45 klubova i sekcija, medju kojima je i KRA CRNI PANTER, koji se nalazi na dole navedenim lokacijama.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Galerija</h2>
+                    <!-- <h3 class="section-subheading text-muted">Šta je realni Aikido?</h3> -->
+                </div>
+            </div>
+            <div class="row">
+              <div id="blueimp-gallery" class="blueimp-gallery">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev">‹</a>
+                <a class="next">›</a>
+                <a class="close">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator"></ol>
+              </div>
+            </div>
+            <div id="links">
+                <a href="./img/photos/polaganje_brdo_3.jpg" title="Photo 1">
+                    <img src="./img/photos/thumbs/polaganje_brdo_3_small.jpg" alt="Photo 1 small">
+                </a>
+                <a href="./img/photos/polaganje_brdo_2.jpg" title="Photo 2">
+                    <img src="./img/photos/thumbs/polaganje_brdo_2_small.jpg" alt="Photo 2 small">
+                </a>
+                <a href="./img/photos/polaganje_brdo_1.jpg" title="Photo 3">
+                    <img src="./img/photos/thumbs/polaganje_brdo_1_small.jpg" alt="Photo 3 small">
+                </a>
+                <a href="./img/photos/trening_brdo_2.jpg" title="Photo 4">
+                    <img src="./img/photos/thumbs/trening_brdo_2_small.jpg" alt="Photo 4 small">
+                </a>
+                <a href="./img/photos/trening_brdo_1.jpg" title="Photo 5">
+                    <img src="./img/photos/thumbs/trening_brdo_1_small.jpg" alt="Photo 5 small">
+                </a>
+                <a href="./img/photos/ekipa_brdo_2.jpg" title="Photo 6">
+                    <img src="./img/photos/thumbs/ekipa_brdo_2_small.jpg" alt="Photo 6 small">
+                </a>
+                <a href="./img/photos/prica_brdo.jpg" title="Photo 7">
+                    <img src="./img/photos/thumbs/prica_brdo_small.jpg" alt="Photo 7 small">
+                </a>
+                <a href="./img/photos/ekipa_brdo.jpg" title="Photo 8">
+                    <img src="./img/photos/thumbs/ekipa_brdo_small.jpg" alt="Photo 8 small">
+                </a>
+                <a href="./img/photos/ekipa_sumice.jpg" title="Photo 9">
+                    <img src="./img/photos/thumbs/ekipa_sumice_small.jpg" alt="Photo 9 small">
+                </a>
+                <a href="./img/photos/trening_sumice_1.jpg" title="Photo 10">
+                    <img src="./img/photos/thumbs/trening_sumice_1_small.jpg" alt="Photo 10 small">
+                </a>
+                <a href="./img/photos/trenerka_cela.jpg" title="Photo 11">
+                    <img src="./img/photos/thumbs/trenerka_cela_small.jpg" alt="Photo 11 small">
+                </a>
+                <a href="./img/photos/trening.jpg" title="Photo 12">
+                    <img src="./img/photos/thumbs/trening_small.jpg" alt="Photo 12 small">
+                </a>
+                <a href="./img/photos/trenerka_gd.jpg" title="Photo 13">
+                    <img src="./img/photos/thumbs/trenerka_gd_small.jpg" alt="Photo 13 small">
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -363,6 +433,18 @@
 
     <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
+    <!-- Gallery -->
+    <script src="js/blueimp-gallery.min.js"></script>
+    <script>
+      document.getElementById('links').onclick = function (event) {
+          event = event || window.event;
+          var target = event.target || event.srcElement,
+              link = target.src ? target.parentNode : target,
+              options = {index: link, event: event},
+              links = this.getElementsByTagName('a');
+          blueimp.Gallery(links, options);
+      };
+    </script>
 
 </body>
 
