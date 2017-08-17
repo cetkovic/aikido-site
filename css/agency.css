@@ -235,6 +235,8 @@ fieldset[disabled] .btn-xl.active {
   padding: 10px;
   max-width: 260px;
   max-height: 260px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 header {
   background-image: url('../img/header-bg.jpg');
